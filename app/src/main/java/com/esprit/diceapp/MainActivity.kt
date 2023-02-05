@@ -63,8 +63,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun reset(view: View) {
-        Toast.makeText(this,"android = ${skillAndroid.progress}, IOS = ${skillIos.progress} and Flutter = ${skillFlutter.progress}"
-        ,Toast.LENGTH_LONG).show()
+        val edits = listOf(fullName,email,age)
+        val skills = listOf(skillAndroid,skillIos,skillFlutter)
+        edits.forEach { editText -> editText.setText("") }
+        skills.forEach { skill-> skill.progress = 0 }
     }
 
 }
