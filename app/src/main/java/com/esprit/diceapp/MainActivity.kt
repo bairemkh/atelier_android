@@ -2,6 +2,7 @@ package com.esprit.diceapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -34,28 +35,36 @@ class MainActivity : AppCompatActivity() {
         okBtn=findViewById(R.id.nextBtn)
         resetBtn=findViewById(R.id.resetBtn)
 
-        okBtn.setOnClickListener(View.OnClickListener {
-            if(fullName.text.isEmpty()||email.text.isEmpty()||age.text.isEmpty()){
-                Toast.makeText(this,"Please fill the form",Toast.LENGTH_SHORT).show()
-            }
-            else if (!email.text.matches(emailPattern.toRegex())){
-                Toast.makeText(this,"Please put a valid email",Toast.LENGTH_SHORT).show()
-            }
-            else{
-                var listSeek = listOf(skillAndroid.progress,skillIos.progress,skillFlutter.progress)
-                val listSkills= listOf<String>("Android","IOS","Flutter")
-                for ((value ,skill) in listSeek.zip(listSkills)){
-                    if (value>80)
-                        Toast.makeText(this,"Vous êtes excellent en $skill",Toast.LENGTH_SHORT).show()
+        okBtn.setOnClickListener {
+            Log.i("Action","Clicked")
+            if (fullName.text.isEmpty() || email.text.isEmpty() || age.text.isEmpty()) {
+                Toast.makeText(this, "Please fill the form", Toast.LENGTH_SHORT).show()
+            } else if (!email.text.matches(emailPattern.toRegex())) {
+                Toast.makeText(this, "Please put a valid email", Toast.LENGTH_SHORT).show()
+            } else {
+                var listSeek =
+                    listOf(skillAndroid.progress, skillIos.progress, skillFlutter.progress)
+                Log.e("info",listSeek.toString())
+                val listSkills = listOf("Android", "IOS", "Flutter")
+                for ((value, skill) in listSeek.zip(listSkills)) {
+                    if (value > 80) {
+                        Toast.makeText(this, "Vous êtes excellent en $skill", Toast.LENGTH_LONG).show()
+                        Log.e("akber","$skill-$value")
+                    }
                 }
-                listSeek=listSeek.filter { skill-> skill>30}
-                if(listSeek.isEmpty()){
-                    Toast.makeText(this,"Vous devez travailler vos skills",Toast.LENGTH_SHORT).show()
-                }
-                else
-                    Toast.makeText(this,"Vous avez de bons skills !",Toast.LENGTH_SHORT).show()
+                listSeek = listSeek.filter { skill -> skill > 30 }
+                if (listSeek.isEmpty()) {
+                    Toast.makeText(this, "Vous devez travailler vos skills", Toast.LENGTH_SHORT)
+                        .show()
+                } else
+                    Toast.makeText(this, "Vous avez de bons skills !", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
+    }
+
+    fun reset(view: View) {
+        Toast.makeText(this,"android = ${skillAndroid.progress}, IOS = ${skillIos.progress} and Flutter = ${skillFlutter.progress}"
+        ,Toast.LENGTH_LONG).show()
     }
 
 }
