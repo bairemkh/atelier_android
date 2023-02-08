@@ -7,13 +7,13 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/namePlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="30dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Enter your Name"
+        android:text="Enter your name"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name">
+        app:layout_constraintTop_toBottomOf="@+id/namePlace">
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,6 +39,7 @@
             android:textSize="25sp" />
 
         <RadioGroup
+            android:id="@+id/resultsColors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -48,8 +49,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
-                <RadioButton
 
+                <RadioButton
+                    android:id="@+id/purple"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -64,7 +66,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
+
                 <RadioButton
+                    android:id="@+id/green"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -77,7 +81,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
+
                 <RadioButton
+                    android:id="@+id/orange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -90,6 +96,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/activity2Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="click"

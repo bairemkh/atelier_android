@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".result">
+    tools:context=".Result">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -20,8 +20,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:rotation="45"
-            android:src="@drawable/ic_baseline_add_circle_outline_24"
+            android:src="@drawable/ic_baseline_highlight_off_24"
             app:tint="@color/white" />
 
         <TextView

@@ -25,6 +25,7 @@
             android:textSize="24dp" />
 
         <EditText
+            android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
@@ -53,6 +54,7 @@
             android:textSize="25sp" />
 
         <RadioGroup
+            android:id="@+id/colorsToChoose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -62,8 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
-                <CheckBox
 
+                <CheckBox
+                    android:id="@+id/blue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -78,7 +81,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
+
                 <CheckBox
+                    android:id="@+id/red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -91,7 +96,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center">
+
                 <CheckBox
+                    android:id="@+id/yellow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -104,9 +111,10 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/firstStep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="click"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
