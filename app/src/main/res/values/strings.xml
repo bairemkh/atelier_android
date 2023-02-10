@@ -10,4 +10,8 @@
     <string name="flutter">FLUTTER</string>
     <string name="ios">IOS</string>
     <string name="reset">RESET</string>
+    <string name="languages">Languages</string>
+    <string name="english">English</string>
+    <string name="arabic">Arabic</string>
+    <string name="hobbies">Hobbies</string>
 </resources>
