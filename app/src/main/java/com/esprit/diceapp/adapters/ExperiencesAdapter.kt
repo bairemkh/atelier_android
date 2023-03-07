@@ -1,5 +1,8 @@
 package com.esprit.diceapp.adapters
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +20,7 @@ class ExperiencesAdapter(val list: List<Experience>): RecyclerView.Adapter<Exper
         var address:TextView = itemView.findViewById(R.id.companyAddress)
         var startDay:TextView = itemView.findViewById(R.id.dateJob)
         var leavingDay:TextView = itemView.findViewById(R.id.dateLeavingJob)
-        var description:TextView = itemView.findViewById(R.id.experienceDesc)
+        var icon:ImageView=itemView.findViewById(R.id.deleteExpIcon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,9 +37,16 @@ class ExperiencesAdapter(val list: List<Experience>): RecyclerView.Adapter<Exper
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = list[position].companyName
         holder.address.text = list[position].companyAddress
-        holder.description.text = list[position].description
         holder.startDay.text = list[position].dateStartJob
         holder.leavingDay.text = list[position].dateEndJob
-        holder.image.setImageResource(list[position].companyImage)
+        holder.image.setImageURI(list[position].companyImage)
+        holder.itemView.context
+        holder.icon.setOnClickListener { AlertDialog.Builder(holder.itemView.context)
+            .setMessage("Are you sure of deleting ${list[position].companyName} from your resume")
+            .setTitle("Delete Experience")
+            .setPositiveButton("Yes") { dialog, which -> Log.e("test","$dialog , which ==> $which") }
+            .setNegativeButton("No"){ _,_ -> Log.e("test","Canceled")}
+            .create().show()
+        }
     }
 }

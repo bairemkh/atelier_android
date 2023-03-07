@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.activities.AddExperience">
+    <ImageView
+        android:id="@+id/addImageExperience"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_image_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addCompanyName"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/Error"
+        app:errorIconDrawable="@drawable/baseline_error_24"
+        app:errorIconTint="@color/Error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="32dp"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCompanyNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_home_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/colorPrimary"
+            android:hint="Company Name" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addCompanyAddress"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/Error"
+        app:errorIconDrawable="@drawable/baseline_error_24"
+        app:errorIconTint="@color/Error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addCompanyAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_exit_to_app_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/colorPrimary"
+            android:hint="Company Address" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addStartDate"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/Error"
+        app:errorIconDrawable="@drawable/baseline_error_24"
+        app:errorIconTint="@color/Error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addStartDateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_calendar_month_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/colorPrimary"
+            android:hint="Start day" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addEndDate"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/Error"
+        app:errorIconDrawable="@drawable/baseline_error_24"
+        app:errorIconTint="@color/Error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addEndDateText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_calendar_month_24"
+            android:drawablePadding="20dp"
+            android:drawableTint="@color/colorPrimary"
+            android:hint="End day" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/addExpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="20dp"
+        android:text="Add Experience" />
+</LinearLayout>
