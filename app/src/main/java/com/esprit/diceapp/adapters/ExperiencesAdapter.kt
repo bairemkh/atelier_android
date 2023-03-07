@@ -2,6 +2,7 @@ package com.esprit.diceapp.adapters
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,7 +40,7 @@ class ExperiencesAdapter(val list: List<Experience>): RecyclerView.Adapter<Exper
         holder.address.text = list[position].companyAddress
         holder.startDay.text = list[position].dateStartJob
         holder.leavingDay.text = list[position].dateEndJob
-        holder.image.setImageURI(list[position].companyImage)
+        holder.image.setImageURI(Uri.parse(list[position].companyImage))
         holder.itemView.context
         holder.icon.setOnClickListener { AlertDialog.Builder(holder.itemView.context)
             .setMessage("Are you sure of deleting ${list[position].companyName} from your resume")

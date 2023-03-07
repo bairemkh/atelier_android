@@ -29,7 +29,7 @@ class ExperienceFragment : Fragment() {
         ).build()
        val list=runBlocking { db.experienceDao().getAllExperiences() }
        Log.e("list","$list")
-        view.findViewById<RecyclerView>(R.id.experienceList).adapter = ExperiencesAdapter(listOf())
+        view.findViewById<RecyclerView>(R.id.experienceList).adapter = ExperiencesAdapter(list)
         return view
     }
 }

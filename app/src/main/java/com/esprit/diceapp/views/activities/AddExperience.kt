@@ -71,7 +71,7 @@ class AddExperience : AppCompatActivity() {
                     this,
                     AppDatabase::class.java, "CV-database"
                 ).build()
-               runBlocking { db.experienceDao().insert(Experience(0,imgData,name.text.toString()
+               runBlocking { db.experienceDao().insert(Experience(0,imgData.toString(),name.text.toString()
                    ,address.text.toString(),startDate.text.toString(),endDate.text.toString())) }
                 finish()
             }

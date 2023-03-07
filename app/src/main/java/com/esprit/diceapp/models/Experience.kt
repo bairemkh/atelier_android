@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class Experience(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val companyImage:Uri,
+    val companyImage:String,
     val companyName:String,
     val companyAddress:String,
     val dateStartJob:String,
