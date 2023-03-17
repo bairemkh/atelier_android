@@ -10,8 +10,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.esprit.diceapp.R
 import com.esprit.diceapp.models.Experience
+import com.esprit.diceapp.storage.AppDatabase
+import kotlinx.coroutines.runBlocking
 
 
 class ExperiencesAdapter(val list: List<Experience>): RecyclerView.Adapter<ExperiencesAdapter.ViewHolder>() {
@@ -41,11 +44,17 @@ class ExperiencesAdapter(val list: List<Experience>): RecyclerView.Adapter<Exper
         holder.startDay.text = list[position].dateStartJob
         holder.leavingDay.text = list[position].dateEndJob
         holder.image.setImageURI(Uri.parse(list[position].companyImage))
-        holder.itemView.context
         holder.icon.setOnClickListener { AlertDialog.Builder(holder.itemView.context)
             .setMessage("Are you sure of deleting ${list[position].companyName} from your resume")
             .setTitle("Delete Experience")
-            .setPositiveButton("Yes") { dialog, which -> Log.e("test","$dialog , which ==> $which") }
+            .setPositiveButton("Yes") { dialog, which ->
+                val db= Room.databaseBuilder(
+                holder.itemView.context,
+                AppDatabase::class.java, "CV-database"
+            ).build()
+               runBlocking { db.experienceDao().delete(list[position]) }
+                Log.e("Test","Deleted")
+            }
             .setNegativeButton("No"){ _,_ -> Log.e("test","Canceled")}
             .create().show()
         }

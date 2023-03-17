@@ -27,8 +27,9 @@ class ExperienceFragment : Fragment() {
             view.context,
             AppDatabase::class.java, "CV-database"
         ).build()
-       val list=runBlocking { db.experienceDao().getAllExperiences() }
-       Log.e("list","$list")
+       val list1=runBlocking { db.experienceDao().getAllExperiences() }
+       val list= listOf<Experience>(Experience(0,"","mehrez arts","dar mehrez","20","23"))
+       Log.e("list","$list1")
         view.findViewById<RecyclerView>(R.id.experienceList).adapter = ExperiencesAdapter(list)
         return view
     }
